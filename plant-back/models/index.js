@@ -10,10 +10,10 @@ const configOptions = {
 };
 
 mongoose
-    .connect(connectionString, configOptions)
+    .connect('mongodb://localhost:27017/finalproject', configOptions)
     .then(() => console.log("MongoDB successfully connected..."))
     .catch((err) => console.log(`MongoDB connection error: ${err}`));
 
 module.exports = {
-  Log: require('./log');
+  Plant: require('./plant'),
 }
