@@ -49,6 +49,12 @@ const destroy = (req, res) => {
   });
 };
 
+// const graveyard = (req,res) => {
+//   db.Plant.findbyId(req.params.id).then((foundPlant) => {
+//     res.json({})
+//   })
+// }
+
 module.exports = {
   index,
   show,
