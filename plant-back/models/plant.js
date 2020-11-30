@@ -3,8 +3,17 @@ const Schema = mongoose.Schema;
 
 const PlantSchema = new Schema({
   sci_name: String,
-  water: Number,
-  sun: Number,
+  nickname: String,
+  water: {
+    type: Number, 
+    max: 5
+  },
+  sun: {
+    type: Number,
+    max: 5
+  },
+  description: String,
+  image: String
 });
 
 const Plant = mongoose.model('Plant', PlantSchema);
