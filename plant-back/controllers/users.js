@@ -1,6 +1,6 @@
 const db = require('../models');
 
-const index = (req,res) => {
+const index = (req, res) => {
   db.User.find({}).then((foundUser) => {
     res.json({user: foundUser})
   }).catch((err) => {

@@ -22,6 +22,7 @@ app.use(cors(corsOptions));
 //Routes
 app.get('/', (req, res) => res.send('home'));
 app.use('/plants', routes.plants);
+app.use('/users', routes.user);
 
 
 //Listener
