@@ -21,3 +21,6 @@ React, Express, CSS, Bootstrap
 * Adding authentication to users
 * Creating blog posts
 * Adding photo uploads
+
+## Other
+<a href="https://lovepik.com/images/png-leaves.html">Leaves Png vectors by Lovepik.com</a>
