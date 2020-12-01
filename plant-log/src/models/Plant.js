@@ -1,29 +1,10 @@
-import React from 'react';
-import axios from 'axios';
-import PlantList from '../components/PlantList';
+import Axios from "axios";
+const endPoint = `http://localhost:4000/plants`;
 
-const endPoint = `https://super-crud.herokuapp.com/todos`;
-
-class PlantModel extends React.Component {
-  state = {
-    plants: [],
-    loading: true,
+class PlantModel {
+  static all() {
+    return Axios.get(endPoint)
   }
-
-
-    static all = () => {
-      let request = axios.get(endPoint);
-      return request;
-    };
-
-  render() {
-    return (
-      <div>
-        please
-        <PlantList />
-      </div>
-    )
-  }
-};
+}
 
 export default PlantModel;

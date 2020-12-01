@@ -8,6 +8,9 @@ class PlantIndex extends React.Component  {
     loading: true,
   }
 
+  componentDidMount() {
+    // console.log("data", data);
+  }
   
   render() {
     return (
@@ -15,9 +18,8 @@ class PlantIndex extends React.Component  {
         <h1>Plant Profiles</h1>
         <div className="album py-5 bg-light">
           <div className="container">
-            <div className="row">
               <PlantList plantsList={this.state.plants} />
-            </div>
+        
           </div>
         </div>
       </div>
