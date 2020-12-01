@@ -49,16 +49,20 @@ const destroy = (req, res) => {
   });
 };
 
-// const graveyard = (req,res) => {
-//   db.Plant.findbyId(req.params.id).then((foundPlant) => {
-//     res.json({})
-//   })
-// }
+const graveyard = (req,res) => {
+  db.Plant.find({is_dead: true}).then((foundPlant) => {
+    res.json({gip: foundPlant})
+  }).catch((err) => {
+    console.log('Error in plant.graveyard', err);
+    res.json({Error: 'unable to find data'})
+  })
+}
 
 module.exports = {
   index,
   show,
   create,
   update,
-  destroy
+  destroy,
+  graveyard
 };

@@ -13,7 +13,11 @@ const PlantSchema = new Schema({
     max: 5
   },
   description: String,
-  image: String
+  is_dead: Boolean,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 const Plant = mongoose.model('Plant', PlantSchema);

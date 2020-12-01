@@ -6,14 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+// const domain = plantlog.us.auth0.com;
+// const clientId = zmwdVyVqyiXuUqh8WjBR4gqMOCVTSTQs;
 
 ReactDOM.render(
   <Auth0Provider
-    domain={domain}
-    clientId={clientId}
-    redirectUri={window.location.origin}>
+    domain="plantlog.us.auth0.com"
+    clientId="zmwdVyVqyiXuUqh8WjBR4gqMOCVTSTQs"
+    redirectUri="{window.location.origin}">
       <Router>
         <App />
       </Router>
