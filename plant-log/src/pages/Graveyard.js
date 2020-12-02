@@ -14,7 +14,8 @@ const Graveyard = (props) => {
 
 
   return (
-    <div className="plant-show">
+    <div className="container">
+      <h1>Growing in Peace</h1>
       {plant}
     </div>
   );
