@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import PlantList from '../components/PlantList'
 
 class PlantIndex extends React.Component  {
@@ -9,7 +8,6 @@ class PlantIndex extends React.Component  {
   }
 
   componentDidMount() {
-    // console.log("data", data);
   }
   
   render() {
@@ -17,9 +15,8 @@ class PlantIndex extends React.Component  {
       <div>
         <h1>Plant Profiles</h1>
           <div className="container">
-              <PlantList plantsList={this.state.plants} />
-        
-          </div>
+            <PlantList plantsList={this.state.plants} />
+        </div>
       </div>
     )
   }

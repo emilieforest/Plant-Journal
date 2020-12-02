@@ -7,7 +7,7 @@ const PlantList = (props) => {
   useEffect(() => {
     PlantModel.all().then((res) => {
       const {plants} = res.data
-      console.log(plants)
+      console.log("Pls", plants)
       const bbies = plants.map((plant, index) => {
         return <Plant key={index} plant={plant} />
       })
