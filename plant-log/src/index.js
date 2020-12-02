@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 
-// const domain = plantlog.us.auth0.com;
-// const clientId = zmwdVyVqyiXuUqh8WjBR4gqMOCVTSTQs;
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 ReactDOM.render(
+  <BrowserRouter>
   <Auth0Provider
-    domain="plantlog.us.auth0.com"
-    clientId="zmwdVyVqyiXuUqh8WjBR4gqMOCVTSTQs"
-    redirectUri="{window.location.origin}">
+  domain={domain}
+  clientId={clientId}
+  redirectUri={window.location.origin}>
       <Router>
         <App />
       </Router>
-  </Auth0Provider>,
+  </Auth0Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

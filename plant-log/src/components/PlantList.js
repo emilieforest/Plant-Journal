@@ -7,17 +7,16 @@ const PlantList = (props) => {
   useEffect(() => {
     PlantModel.all().then((res) => {
       const {plants} = res.data
-      console.log("Pls", plants)
+      // console.log("Pls", plants)
       const bbies = plants.map((plant, index) => {
-        return <Plant key={index} plant={plant} />
+        if (plant.is_dead == false) {
+          return <Plant key={index} plant={plant} />
+        }
       })
       setPlants(bbies)
     })
   },[])
 
-  const plantsArr = props.plantsList.map((plantObj) => (
-    <Plant key={plantObj.id} plant={plantObj} />
-  ));
   return (
     <>
     {plants}

@@ -12,7 +12,7 @@ class PlantIndex extends React.Component  {
   
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Plant Profiles</h1>
           <div className="container">
             <PlantList plantsList={this.state.plants} />
