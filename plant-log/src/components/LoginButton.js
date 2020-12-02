@@ -1,19 +1,16 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { Button } from 'react-bootstrap';
+import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   return (
-    <Button
-      className="btn-margin"
-      onClick={() => loginWithRedirect()}
-      id="qsLoginBtn"
-      variant="primay"
-    >
-      Log In
-    </Button>
-  );
-};
+    !isAuthenticated && (
+      <button onClick={() => loginWithRedirect()}>
+        Log In
+      </button>
+    )
+  )
+}
 
 export default LoginButton;

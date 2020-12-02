@@ -10,7 +10,7 @@ const PlantList = (props) => {
       // console.log("Pls", plants)
       const bbies = plants.map((plant, index) => {
         if (plant.is_dead == false) {
-          return <Plant key={index} plant={plant} />
+          return <Plant plant={plant} />
         }
       })
       setPlants(bbies)

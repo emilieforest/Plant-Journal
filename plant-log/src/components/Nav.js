@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
+// import { auth0 } from '@auth0/auth0-react';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
 const Nav = (props) => {
   return (
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="/">Plant Log</a>
+    <a class="navbar-brand" href="/">Plant Pals</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
