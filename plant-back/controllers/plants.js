@@ -19,12 +19,20 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-  db.Plant.create(req.body).then((savedPlant) => {
+  db.Plant.create(req.body).then((savedPlant, userId) => {
     res.status(201).json({plant: savedPlant});
   }).catch((err) => {
     console.log('Error in plant.create', err);
     res.json({Error: 'unable to get create data'})
   });
+};
+//help 
+const addPlant = (plantId, userId) => {
+  return db.User.findByIdAndUpdate(
+    plantId,
+    {user: userId},
+    {new: true, useFindAndModify: false}
+  );
 };
 
 const update = (req, res) => {
