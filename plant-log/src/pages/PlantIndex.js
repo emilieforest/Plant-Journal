@@ -16,12 +16,10 @@ class PlantIndex extends React.Component  {
     return (
       <div>
         <h1>Plant Profiles</h1>
-        <div className="album py-5 bg-light">
           <div className="container">
               <PlantList plantsList={this.state.plants} />
         
           </div>
-        </div>
       </div>
     )
   }
