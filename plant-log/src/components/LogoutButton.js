@@ -7,11 +7,11 @@ const LoginButton = () => {
   return (
     <Button
       className="btn-margin"
-      onClick={() => loginWithRedirect()}
+      onClick={() => logout()}
       id="qsLoginBtn"
-      variant="primay"
+      variant="danger"
     >
-      Log In
+      Log Out
     </Button>
   );
 };

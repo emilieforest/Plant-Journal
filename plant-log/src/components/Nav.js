@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 const Nav = (props) => {
   return (
@@ -15,6 +18,9 @@ const Nav = (props) => {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><NavLink className="nav-link" to="/plants">Plants</NavLink></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><NavLink className="nav-link" to="/plants/graveyard">Graveyard</NavLink></a>
         </li>
       </ul>
     </div>

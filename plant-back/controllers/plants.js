@@ -59,7 +59,7 @@ const destroy = (req, res) => {
 
 const graveyard = (req,res) => {
   db.Plant.find({is_dead: true}).then((foundPlant) => {
-    res.json({gip: foundPlant})
+    res.json({plant: foundPlant})
   }).catch((err) => {
     console.log('Error in plant.graveyard', err);
     res.json({Error: 'unable to find data'})

@@ -9,10 +9,10 @@ const UserSchema = new Schema({
   email: String,
   first_name: String,
   last_name: String,
-  plants: {
+  plants: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Plant'
-  }
+  }]
 });
 
 const User = mongoose.model('User', UserSchema);
