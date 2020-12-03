@@ -30,6 +30,9 @@ const Nav = (props) => {
         <li className="nav-item">
           <a className="nav-link" href="#"><NavLink className="nav-link" to="/plants/new">Add Plant</NavLink></a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#"><NavLink className="nav-link" to="/profile">Profile</NavLink></a>
+        </li>
         <AuthNav className="nav-item"/>
       </ul>
     </div>

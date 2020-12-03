@@ -1,5 +1,7 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PlantModel from '../models/Plant';
+import {withRouter} from 'react-router-dom';
 
 class NewPlant extends React.Component {
   state = {
@@ -12,23 +14,24 @@ class NewPlant extends React.Component {
   };
 
   handleInputChange = (event) => {
-    if (event.target.name === 'completed') {
+    if (event.target.name === 'is_dead') {
       this.setState((prevState) => {
-        return { completed: !prevState.completed };
+        return { is_dead: !prevState.is_dead };
       });
     } else {
       this.setState({ [event.target.name]: event.target.value });
     }
   }
 
-  handleFormSubmit = (event) => {
+  formSubmit = (event) => {
     event.preventDefault();
-
-    
+    console.log(this.state);
     PlantModel.create(this.state)
-      .then((data) => {
-        this.props.history.push('/plants');
-      });
+    .then(res => res.status === 200 ? window.location.href = '/' : null)
+    // .then((data) => {
+    //   // console.log(data);
+    //   this.props.history.push(`/plants`)
+    // })
   }
 
   render() {
@@ -37,7 +40,7 @@ class NewPlant extends React.Component {
     return (
       <div className="container">
         <h2>Add a New Plant</h2>
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.formSubmit}>
           
           <div className="formGroup">
             <label
@@ -121,7 +124,7 @@ class NewPlant extends React.Component {
           <div className="formGroup">
             <label
               className="formGroupLabel" 
-              htmlFor="completed"
+              htmlFor="is_dead"
             >
               Is your plant dead?
             </label>
@@ -130,16 +133,16 @@ class NewPlant extends React.Component {
               className="formGroupInput"
               value={this.state.is_dead}
               type="checkbox" 
-              id="completed" 
+              id="is_dead" 
               name="is-dead"
             />
           </div>
 
-          <input type="submit" value="Add New Plant"/>
+          <input type="submit" value="Add New Plant" />
         </form>
       </div>
     );
   }
 }
 
-export default NewPlant;
+export default withRouter(NewPlant);

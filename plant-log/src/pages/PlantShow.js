@@ -8,15 +8,13 @@ const PlantShow = (props) => {
     PlantModel.getById(props.match.params.id)
     .then((res) => {
       const {plant} = res.data
-      console.log("What is this",res.data.plant);
       setPlant(<PlantShowCard plant={plant} />)
     })
   }, []);
-  console.log("HELLO", plant);
 
 
   return (
-    <div className="plant-show">
+    <div className="container">
       {plant}
     </div>
   );

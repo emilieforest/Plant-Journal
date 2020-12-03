@@ -1,12 +1,14 @@
 import React from 'react';
 import PlantList from '../components/PlantList'
 import PlantModel from '../models/Plant';
+import {useAuth0} from '@auth0/auth0-react';
 
 class PlantIndex extends React.Component  {
   state = {
     plants: [],
     loading: true,
   }
+
 
   componentDidMount() {
     PlantModel.all().then((data) => {

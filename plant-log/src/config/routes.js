@@ -9,6 +9,7 @@ import PlantShow from '../pages/PlantShow'
 import NewPlant from '../pages/NewPlant';
 
 import NewUser from '../pages/NewUser';
+import Profile from '../pages/Profile';
 
 export default (
   <Switch>
@@ -19,5 +20,6 @@ export default (
     <Route exact path='/plants/new' component={NewPlant} />
     <Route  path='/plants/:id' component={PlantShow} />
     <Route path='/users' component={NewUser} />
+    <Route path='/profile' component={Profile} />
   </Switch>
 );
