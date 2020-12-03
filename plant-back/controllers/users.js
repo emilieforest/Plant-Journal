@@ -41,12 +41,13 @@ const update = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  db.User.findByIdAndDelete(req.params.id).then((deletedUser) => {
-    res.json({log: deletedUser})
-  }).catch((err) => {
-    console.log('Error in user.destroy', err);
-    res.json({Error: 'unable to delete data'})
-  });
+  db.User.findByIdAndDelete(req.params.id, (err, deletedUser) => {
+    if (err) return console.log(err);
+    db.Plant.deleteMany({_id: {$in: deletedUser.plants}}, (err) => {
+      if (err) return console.log(err);
+      res.json(deletedUser)
+    })
+  })
 };
 
 module.exports = {

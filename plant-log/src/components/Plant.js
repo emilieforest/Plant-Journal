@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Plant(props) {
   return (
-    // <div className="row row-cols-1 row-cols-md-3">
       <div className="col mb-4">
         <div className="card">
           <li className="plantCard">
@@ -24,10 +23,8 @@ function Plant(props) {
               <Link to={`/plants/graveyard`}>G.i.P</Link>
             </div>
           </li>
-
         </div>
       </div>
-    // </div>
   )
 }
 

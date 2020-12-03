@@ -7,8 +7,6 @@ const UserSchema = new Schema({
     // minlength: 5
   },
   email: String,
-  first_name: String,
-  last_name: String,
   plants: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Plant'
