@@ -9,6 +9,10 @@ class PlantModel {
   static getById(id) {
     return Axios.get(`http://localhost:4000/plants/${id}`)
   }
+
+  static graveyard() {
+    return Axios.get('http://localhost:4000/plants/graveyard')
+  }
 }
 
 export default PlantModel;

@@ -10,7 +10,7 @@ class PlantIndex extends React.Component  {
 
   componentDidMount() {
     PlantModel.all().then((data) => {
-      console.log("Data:", data);
+      console.log("Data:", data.data.plants);
       this.setState({plants: data.plants});
     })
   }

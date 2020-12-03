@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PlantShowCard = (props) => {
+  console.log("WHAT R U", props.plant);
   return (
     <div className="row row-cols-1 row-cols-md-2">
       <div className="col mb-4">
