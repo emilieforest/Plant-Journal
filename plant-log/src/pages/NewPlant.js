@@ -137,7 +137,6 @@ class NewPlant extends React.Component {
               name="is-dead"
             />
           </div>
-
           <input type="submit" value="Add New Plant" />
         </form>
       </div>

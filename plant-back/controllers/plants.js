@@ -22,13 +22,15 @@ const show = (req, res) => {
   });
 };
 
-//Create Game
+//Create Plant
 const create = (req, res) => {
-  db.Plant.create(req.body).then((savedPlant, userId) => {
-    res.status(201).json({plant: savedPlant});
-    db.User.findById(req.body.userId).then((foundUser) => {
-      foundUser.plants.push(foundUser);
-      foundUser.save(() => res.json('/plants'))
+  console.log(req.body);
+  db.Plant.create(req.body)
+  .then((savedPlant) => {
+    db.User.findById(req.body.userId)
+    .then((foundUser) => {
+      foundUser.plants.push(foundUser)
+      foundUser.save(() => res.json('plant: savedPlant'))
     })
   }).catch((err) => {
     console.log('Error in plant.create', err);

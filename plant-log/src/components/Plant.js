@@ -18,9 +18,8 @@ function Plant(props) {
             </Link>
             <div className="plantButtons">
               <Link to={`/plants/${props.plant._id}/edit`}
-              className="plantButton">Edit
+              className="btn btn-sm btn-success">Edit
               </Link>
-              <Link to={`/plants/graveyard`}>G.i.P</Link>
             </div>
           </li>
         </div>
