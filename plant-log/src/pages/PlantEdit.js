@@ -11,20 +11,22 @@ class PlantEdit extends React.Component {
     is_dead: false
   }
 
-  componentDidMount() {
-    const plantId = this.props.match.params.id;
-    plantModel.getOne(plantId)
-    .then((data) => {
-      this.setState({
-        sci_name: data.plant.sci_name,
-        ninckname: data.plant.nickname,
-        description: data.plant.description,
-        sun: data.plant.sun,
-        water: data.plant.water,
-        is_dead: data.plant.is_dead
-      })
-    })
-  }
+  // componentDidMount() {
+  //   const plantId = this.props.match.params.id;
+  //   PlantModel.getById(plantId)
+  //     .then((data) => {
+  //       console.log("What've got here", data.data.plant);
+  //       // let data = data.data.plant
+  //     this.setState({
+  //       sci_name: data.sci_name,
+  //       ninckname: data.nickname,
+  //       description: data.description,
+  //       sun: data.sun,
+  //       water: data.water,
+  //       is_dead: data.is_dead
+  //     })
+  //   })
+  // }
 
   handleInputChange = (event) => {
     if (event.target.name === 'is_dead') {
@@ -39,10 +41,11 @@ class PlantEdit extends React.Component {
   formSubmit = (event) => {
     event.preventDefault() ;
     const plantId = this.props.match.params.id;
-    plantModel.update(plantId, this.state)
+    PlantModel.update(plantId, this.state)
     .then((data) => {
       console.log("updated Plant:", data);
-      this.props.history.push(`/plants/${plantId}`)
+      // this.props.history.push(`/plants/${plantId}`) 
+      this.props.history.push(`/plants`)
     })
   }
 
@@ -82,6 +85,23 @@ class PlantEdit extends React.Component {
             value={this.state.water}
             type="number"
             name="water"/>
+            <div className="formGroup">
+            <label
+              className="formGroupLabel" 
+              htmlFor="completed"
+            >
+              Is your plant dead?
+            </label>
+            <input 
+              onChange={this.handleInputChange}
+              className="formGroupInput"
+              value={this.state.is_dead}
+              type="checkbox" 
+              id="completed" 
+              name="is-dead"
+            />
+          </div>
+          <button onClick={this.formSubmit}>Update</button>
         </form>
       </div>
     )

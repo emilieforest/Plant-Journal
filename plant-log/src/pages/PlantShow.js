@@ -5,12 +5,14 @@ import PlantShowCard from '../components/PlantShowCard';
 const PlantShow = (props) => {
   const [plant, setPlant] = useState('');
   useEffect(() => {
-    PlantModel.getById(props.match.url.split("/")[2]).then((res) => {
-      console.log(res.data);
+    PlantModel.getById(props.match.params.id)
+    .then((res) => {
       const {plant} = res.data
-    setPlant(<PlantShowCard plant={plant} />)
+      console.log("What is this",res.data.plant);
+      setPlant(<PlantShowCard plant={plant} />)
     })
   }, []);
+  console.log("HELLO", plant);
 
 
   return (

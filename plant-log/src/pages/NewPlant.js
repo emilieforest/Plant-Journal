@@ -24,7 +24,7 @@ class NewPlant extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    // NOTE: this.state is only properties for new game
+    
     PlantModel.create(this.state)
       .then((data) => {
         this.props.history.push('/plants');
@@ -36,7 +36,7 @@ class NewPlant extends React.Component {
 
     return (
       <div className="container">
-        <h2>New Plant</h2>
+        <h2>Add a New Plant</h2>
         <form onSubmit={this.handleFormSubmit}>
           
           <div className="formGroup">
@@ -97,6 +97,7 @@ class NewPlant extends React.Component {
               value={this.state.sun}
               type="number" 
               name="sun"
+              min="0"
               max="5"
             />
           </div>
@@ -113,6 +114,7 @@ class NewPlant extends React.Component {
               value={this.state.water}
               type="number" 
               name="water"
+              min="0"
               max="5"
             />
           </div>
@@ -121,7 +123,7 @@ class NewPlant extends React.Component {
               className="formGroupLabel" 
               htmlFor="completed"
             >
-              Is your plant alive?
+              Is your plant dead?
             </label>
             <input 
               onChange={this.handleInputChange}

@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PlantModel from '../models/Plant';
+import { withRouter } from 'react-router-dom';
 
 const PlantShowCard = (props) => {
-  // addToGrave() {
+  console.log("this is plant show card", props.plant)
+  if (!props.plant) {
+    return <h1>Loading...</h1>
+  }
 
-  // }
+  const handleDelete = ()  => {
+    PlantModel.delete(props.plant._id);
+    props.history.push('/plants')
+  }
+
   return (
     <div className="">
       <h5>Scientific Name: {props.plant.sci_name}</h5>
@@ -19,10 +28,10 @@ const PlantShowCard = (props) => {
         <Link to={`/plants/${props.plant._id}/edit`}
       className="plantButton"><button>Edit</button>
       </Link>
-        <button >G.i.P</button>
+        <button onClick={handleDelete}>Delete</button>
     </div>
     </div>
   );
 }
 
-export default PlantShowCard;
+export default withRouter(PlantShowCard);

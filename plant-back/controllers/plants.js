@@ -1,5 +1,7 @@
 const db = require('../models');
 
+
+//All Plants
 const index = (req, res) => {
   db.Plant.find({}).then((foundPlant) => {
     res.json({plants: foundPlant})
@@ -9,7 +11,9 @@ const index = (req, res) => {
   });
 };
 
+//Plant by Id
 const show = (req, res) => {
+  console.log("!!!!!!!!",req.params.id);
   db.Plant.findById(req.params.id).then((foundPlant) => {
     res.json({plant: foundPlant})
   }).catch((err) => {
@@ -18,9 +22,14 @@ const show = (req, res) => {
   });
 };
 
+//Create Game
 const create = (req, res) => {
   db.Plant.create(req.body).then((savedPlant, userId) => {
     res.status(201).json({plant: savedPlant});
+    db.User.findById(req.body.userId).then((foundUser) => {
+      foundUser.plants.push(foundUser);
+      foundUser.save(() => res.json('/plants'))
+    })
   }).catch((err) => {
     console.log('Error in plant.create', err);
     res.json({Error: 'unable to get create data'})
@@ -41,7 +50,7 @@ const update = (req, res) => {
     {$set: req.body},
     {new: true})
     .then((updatedPlant) => {
-      res.json({log: updatedPlant})
+      res.json({plant: updatedPlant})
     }).catch((err) => {
       console.log('Error in plant.update', err);
       res.json({Error: 'unable to update data'})
@@ -49,8 +58,8 @@ const update = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  db.Plant.findbyIdAndDelete(req.params.id).then((deletedPlant) => {
-    res.json({log: deletedPlant})
+  db.Plant.findByIdAndDelete(req.params.id).then((deletedPlant) => {
+    res.json({plant: deletedPlant})
   }).catch((err) => {
     console.log('Error in plant.destroy', err);
     res.json({Error: 'unable to delete data'})
