@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PlantShowCard = (props) => {
+  // addToGrave() {
+
+  // }
   return (
-    <div className="container">
+    <div className="">
       <h5>Scientific Name: {props.plant.sci_name}</h5>
       <h5>Nickmane: {props.plant.nickname}</h5>
       <p>Description: {props.plant.description}</p>
@@ -16,8 +19,7 @@ const PlantShowCard = (props) => {
         <Link to={`/plants/${props.plant._id}/edit`}
       className="plantButton"><button>Edit</button>
       </Link>
-      <Link to={`/plants/graveyard`}>
-        <button>G.i.P</button></Link>
+        <button >G.i.P</button>
     </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 function Plant(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-3">
+    // <div className="row row-cols-1 row-cols-md-3">
       <div className="col mb-4">
         <div className="card">
           <li className="plantCard">
@@ -27,7 +27,7 @@ function Plant(props) {
 
         </div>
       </div>
-    </div>
+    // </div>
   )
 }
 

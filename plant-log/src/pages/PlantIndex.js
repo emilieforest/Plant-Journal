@@ -28,9 +28,11 @@ class PlantIndex extends React.Component  {
     return (
       <div className="container">
         <h1>Plant Profiles</h1>
+        <div className="row row-cols-1 row-cols-md-3">
             <PlantList 
             plantsList={this.state.plants}
             deletePlant={this.deletePlant} />
+        </div>
       </div>
     )
   }

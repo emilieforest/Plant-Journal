@@ -6,6 +6,7 @@ import PlantIndex from '../pages/PlantIndex';
 import Edit from '../pages/PlantEdit';
 import Graveyard from '../pages/Graveyard';
 import PlantShow from '../pages/PlantShow'
+import NewPlant from '../pages/NewPlant';
 
 export default (
   <Switch>
@@ -14,5 +15,6 @@ export default (
     <Route exact path='/plants/:id/edit' component={Edit} />
     <Route exact path='/plants/graveyard' component={Graveyard} />
     <Route  path='/plants/:id' component={PlantShow} />
+    <Route exact path='/plants/new' component={NewPlant} />
   </Switch>
 );
