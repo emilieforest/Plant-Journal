@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+body{
+    background-color: rgb(81, 96, 81);
+    color: black;
+}
+li {
+    list-style: none;
+}
+li a {
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* nav */
+.navbar {
+    background-color: rgb(233, 253, 234);
+}
+.navbar a {
+    color: rgb(39, 107, 18);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Plant Show page */
+.container {
+    margin-top: 5%;
+    padding: 3%;
+    background-color: rgb(145, 192, 145);
+    color: black;
+    border: dotted 2px black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.plantButton {
+    margin: 5px;
+    color: yellowgreen;
+    background-color: rgb(234, 253, 222);
+    border: none;
+    border-radius: 10%;
 }

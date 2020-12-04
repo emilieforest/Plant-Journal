@@ -22,7 +22,8 @@ app.use(cors(corsOptions));
 //Routes
 app.get('/', (req, res) => res.send('home'));
 app.use('/plants', routes.plants);
+app.use('/users', routes.user);
 
 
 //Listener
-app.listen(4000, () => console.log(`You're growing in port ${PORT}`));
+app.listen(PORT, () => console.log(`You're growing in port ${PORT}`));
