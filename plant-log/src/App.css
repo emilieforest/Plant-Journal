@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(80, 96, 80);
+    background-color: rgb(81, 96, 81);
     color: black;
 }
 li {
@@ -9,6 +9,27 @@ li a {
     color: black;
 }
 
-.nav-button {
-    position: relative;
+/* nav */
+.navbar {
+    background-color: rgb(233, 253, 234);
+}
+.navbar a {
+    color: rgb(39, 107, 18);
+}
+
+/* Plant Show page */
+.container {
+    margin-top: 5%;
+    padding: 3%;
+    background-color: rgb(145, 192, 145);
+    color: black;
+    border: dotted 2px black;
+}
+
+.plantButton {
+    margin: 5px;
+    color: yellowgreen;
+    background-color: rgb(234, 253, 222);
+    border: none;
+    border-radius: 10%;
 }

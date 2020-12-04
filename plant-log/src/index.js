@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <Router>
     <Auth0ProviderWithHistory>
-    <App />
+      <App />
     </Auth0ProviderWithHistory>
   </Router>,
   document.getElementById('root')

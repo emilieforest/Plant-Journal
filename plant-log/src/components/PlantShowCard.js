@@ -26,9 +26,9 @@ const PlantShowCard = (props) => {
         <p className="">{props.plant.is_dead}</p>
       <div className="plantButtons">
         <Link to={`/plants/${props.plant._id}/edit`}
-      className="plantButton"><button>Edit</button>
+      ><button className="plantButton">Edit</button>
       </Link>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="plantButton" onClick={handleDelete}>Delete</button>
     </div>
     </div>
   );

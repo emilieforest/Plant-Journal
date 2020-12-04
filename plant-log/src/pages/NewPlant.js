@@ -27,11 +27,9 @@ class NewPlant extends React.Component {
     event.preventDefault();
     console.log(this.state);
     PlantModel.create(this.state)
-    .then(res => res.status === 200 ? window.location.href = '/' : null)
-    // .then((data) => {
-    //   // console.log(data);
-    //   this.props.history.push(`/plants`)
-    // })
+    .then((data) => {
+      return window.location.replace(`http://localhost:3000/plants`)
+    })
   }
 
   render() {

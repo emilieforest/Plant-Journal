@@ -11,7 +11,7 @@ const Nav = (props) => {
     return <div>loading</div>
   }
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light d-flex">
+    <nav className="navbar navbar-expand-md">
     <a className="navbar-brand" href="/">Plant Pals</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
